@@ -17,6 +17,9 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     
     var goalType: GoalType = .shortTerm
     
+    
+    lazy var finishGoalVC: FinishGoalVC = storyboard!.instantiateViewController(identifier: "FinishGoalVC") as! FinishGoalVC
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBtn.bindToKeyboard()
@@ -37,7 +40,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     }
     @IBAction func nextBtnWasPressed(_ sender: Any) {
         if goalTextView.text != "" && goalTextView.text != "What is Your Goal? " {
-            guard let finishGoalVC = storyboard?.instantiateViewController(identifier: "FinishGoalVC") as? FinishGoalVC else {return}
+//            guard let finishGoalVC = storyboard?.instantiateViewController(identifier: "FinishGoalVC") as? FinishGoalVC else {return}
             finishGoalVC.initData(description: goalTextView.text!, type: goalType)
             presentingViewController?.presentSecondaryDetail(finishGoalVC)
         }

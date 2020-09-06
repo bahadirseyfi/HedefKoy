@@ -22,20 +22,32 @@
                                     <constraint firstAttribute="width" constant="533" id="pVU-48-X18"/>
                                 </constraints>
                             </imageView>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85Y-Gs-IQm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59p-eI-b1a">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="166"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="TOk-YB-Uzk"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYQ-Gz-0ZO">
+                                <rect key="frame" x="0.0" y="730" width="414" height="166"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="GBK-Nf-w6v"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="166" id="kOQ-Kj-lRx"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="85Y-Gs-IQm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Iwr-VI-ObJ"/>
-                            <constraint firstItem="85Y-Gs-IQm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="N9k-9M-Gr2"/>
-                            <constraint firstAttribute="bottom" secondItem="85Y-Gs-IQm" secondAttribute="bottom" id="WwY-y9-BYh"/>
-                            <constraint firstItem="85Y-Gs-IQm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b1e-ci-3Bx"/>
+                            <constraint firstItem="59p-eI-b1a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Ki-2r-Ses"/>
+                            <constraint firstItem="59p-eI-b1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G2C-Dh-FQ9"/>
+                            <constraint firstItem="aYQ-Gz-0ZO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mqo-YC-GcV"/>
+                            <constraint firstItem="59p-eI-b1a" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Pv6-fw-DDb"/>
+                            <constraint firstAttribute="bottom" secondItem="aYQ-Gz-0ZO" secondAttribute="bottom" id="Veo-pd-3ii"/>
                             <constraint firstItem="i2t-7f-Zi6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bkr-Wp-Bw1"/>
                             <constraint firstItem="i2t-7f-Zi6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vd3-Eg-nKm"/>
+                            <constraint firstItem="aYQ-Gz-0ZO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wz8-M4-rFg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

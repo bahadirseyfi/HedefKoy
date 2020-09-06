@@ -30,6 +30,7 @@ class GoalsVC: UIViewController {
         fetchCoreDataObjects()
         tableView.reloadData()
     }
+    
     func fetchCoreDataObjects(){
         self.fetch { (complete) in
             if complete {
@@ -45,8 +46,9 @@ class GoalsVC: UIViewController {
 
     @IBAction func addGoalBtnWasPressed(_ sender: Any) {
         
-        guard let createGoalVC = storyboard?.instantiateViewController(identifier: "CreateGoalVC") else {
+        guard let createGoalVC = storyboard?.instantiateViewController(identifier: "CreateGoalVC") as? CreateGoalVC else {
             return }
+        createGoalVC.finishGoalVC.delegate = self
         
         presentDetail(createGoalVC)
     }
@@ -141,5 +143,13 @@ extension GoalsVC {
             debugPrint("Could not fetch: \(error.localizedDescription)")
             completion(false)
         }
+    }
+}
+
+extension GoalsVC: NewDataControl {
+    
+    func newDataAdded() {
+        fetchCoreDataObjects()
+        tableView.reloadData()
     }
 }

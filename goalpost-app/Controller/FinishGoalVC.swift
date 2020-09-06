@@ -9,10 +9,19 @@
 import UIKit
 import CoreData
 
+
+
+protocol NewDataControl {
+    func newDataAdded()
+}
+
 class FinishGoalVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var pointsTextField: UITextField!
     @IBOutlet weak var createGoalBtn: UIButton!
+    
+
+    var delegate: NewDataControl?
     
     var goalDescription: String!
     var goalType: GoalType!
@@ -29,15 +38,18 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
         pointsTextField.delegate = self
     }
     @IBAction func createGoalBtnWasPressed(_ sender: Any) {
+        
         //    Pass Data into Core Data Goal Model
         if pointsTextField.text != "" {
         self.save { (complete) in
             if complete {
+               
+                delegate?.newDataAdded()
                 dismiss(animated: true, completion: nil)
             }
         }
-        }
     }
+}
     func save(completion: (_ finished: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         let goal = Goal(context: managedContext)
@@ -58,5 +70,14 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
         }
         
     }
+        @IBAction func bckBttn(_ sender: Any) {
+            dismiss(animated: true, completion: nil)
+        }
+        
+        
 
-}
+    }
+
+
+
+    
